@@ -7,7 +7,7 @@ export default function AddSupplierPage() {
     const [data, setData] = useState("");
 
     const saveSupplier = async (data) => {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/supplier`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/supplier`, {
             method: "POST", // *GET, POST, PUT, DELETE, etc.
             mode: "cors", // no-cors, *cors, same-origin
             cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
