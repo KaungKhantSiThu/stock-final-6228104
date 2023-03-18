@@ -3,7 +3,7 @@ import Link from 'next/link'
 export default function Home({ suppliers }) {
 
     function deleteBlog(id) {
-        fetch(`/api/supplier/${id}`,
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/supplier/${id}`,
             {
                 method: 'DELETE'
             })
