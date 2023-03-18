@@ -217,6 +217,9 @@ table tr:hover {background-color: #efefef;}
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
   height: 100vh;
+  display: flex;
+  text-align: center;
+  color: white;
 }
 
 @keyframes gradient {

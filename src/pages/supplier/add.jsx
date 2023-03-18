@@ -24,7 +24,7 @@ export default function AddSupplierPage() {
         if (result.error) {
             alert("Error: " + result.error)
         } else {
-            alert("Supplier updated")
+            alert("Supplier added")
             window.location.href = "/supplier"
         }
         console.log(result)
