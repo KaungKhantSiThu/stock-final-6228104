@@ -60,13 +60,11 @@ export default function Home({ suppliers }) {
             }
             </tbody>
             </table>
-            <p>
-            </p>
-
         </>
     )
 }
 export async function getServerSideProps() {
+    console.log("supplier/index.jsx". process.env.NEXT_PUBLIC_API_URL)
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/supplier/`)
     const suppliers = await res.json()
     console.log(suppliers)
