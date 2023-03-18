@@ -1,8 +1,8 @@
-import dbConnect from "@/lib/dbConnect";
-import Supplier from "@/models/Supplier";
+import { connect, model, models, Schema } from "mongoose";
+const connectionString = process.env.MONGODB_URL
 
 export default async function handler(req, res) {
-    await dbConnect()
+    await connect(connectionString)
     console.log("req.method: ", req.method)
     console.log("req.query.id", req.query.id)
 
@@ -22,6 +22,14 @@ export default async function handler(req, res) {
     } else {
         res.setHeader('Allow', ['GET', 'DELETE'])
         res.status(405).end(`Method ${req.method} Not Allowed`)
-
     }
 }
+
+const supplierSchema = new Schema({
+    name: String,
+    address: String,
+    phoneNumber: String,
+});
+
+console.log("Mongoose Models", models)
+const Supplier = models?.supplier || model('supplier', supplierSchema);
